@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin&family=Exo+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @media (max-width: 600px) {
+    /* Your responsive styles go here */
+    body {
+        font-size: 14px; 
+    }
+
+    nav {
+        height: auto;
+        position: static;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .icons {
+        bottom: 5%; 
+    }
+    #about img {
+        width: 80%; 
+        margin-top: 5%; 
+    }
+    #about,
+    #home,
+    #education,
+    #skills,
+    #blog {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+    }
+    /* Add more responsive styles as needed */
+}
+
+        body {
+            background-color: rgb(21, 15, 15);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        nav {
+            top: 5%;
+            background-color: black;
+            border-radius: 20px;
+            height: 10%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            position:fixed;
+            width: 100%;
+            z-index:1000;
+            transition: top 0.5s ease;
+        }
+
+        ul {
+            width: 100%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+        }
+
+        li {
+            display: inline;
+            padding: 0 3px; 
+            width: 10%; 
+            justify-content: left;
+            text-align: left;
+            margin-right: 40px;
+            transform: translate(50%,0);
+        }
+        .name{
+            justify-content: right;
+            text-align: right;
+            margin-right: 10px;
+            position: absolute;
+            right: 0;
+            transform: translate(-50%,0);
+        }
+        a {
+            font-size: 1.5em;
+            color:red;
+            text-decoration: none;
+        }
+
+        #about {
+
+            margin-top: 55px;
+            font-weight: bolder;
+            font-size: 2em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(17, 12, 12);
+            color: red;
+            display: flex;
+            align-items: center;
+            justify-content:flex-start;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+            text-align: left ;
+        }
+        #about .pre{
+            margin-left: 1%;
+            font-family: monospace;
+        }
+        #about img{
+            margin-left: 2.75%;;
+            border-radius: 50%;
+            margin-top: -5%;
+        }
+
+
+        #home:not(.icons){
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 6em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(17, 12, 12);
+            color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+
+        }
+
+        #education{
+            font-size: 2em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(17, 12, 12);
+            color: red;
+            display: flex;
+            flex-direction: column;
+            align-items: left ;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+        #skills{
+            font-size: 2em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(17, 12, 12);
+            color: red;
+            display: flex;
+            font-family: 'Cabin', sans-serif;
+            font-family: 'Exo 2', sans-serif;
+            flex-direction: column;
+            align-items: left ;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+        #achievements{
+            font-size: 2em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(17, 12, 12);
+            color: red;
+            display: flex;
+            font-family: 'Cabin', sans-serif;
+            font-family: 'Exo 2', sans-serif;
+            flex-direction: column;
+            align-items: left ;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+        .bu{
+            color: black;
+            background-color: red;
+            border-radius: 50%;
+        }
+        #skills .skill{
+            position: relative;
+            left:3vw;
+        }
+        #achievements .skill{
+            position: relative;
+            left:3vw;
+        }
+        #blog{
+            font-size: 2em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(17, 12, 12);
+            color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+        #about.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        #achievements.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        #home.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        #education.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        #skills.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        #blog.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        .icons.show{
+            visibility: visible;
+            opacity: 1;
+        }
+            #blog1,
+            #blog2{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border: solid black;
+        margin: 10%;
+        padding: 3%;
+        border-radius: 5%;
+        background-color: rgb(191, 150, 150);
+        }
+        #t1,#t2{
+            font-size: 1em;
+            color: black;
+        
+        }
+        #toggleMode {
+            background-color:transparent;
+            border: white;
+            border: solid;
+            border-radius: 60px;
+            cursor: pointer;
+            font-size: 24px;
+            position: absolute;
+            top: 180%;
+            right: 5%;
+            color: red;
+}
+        *{
+            transition: 0.3s;
+        }
+        #toggleMode:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Change background on hover */
+            color: white; /* Change text color on hover */
+        }
+        #toggleMode::before {
+            content: "\f186"; /* Unicode for moon icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 1000;
+                }
+        body.light-mode {
+            background-color: #fff;
+            color: #000;
+        }
+        .body.light-mode #blog {
+            background-color: rgb(218, 206, 206); /* Light background color for the blog section in light mode */
+            color: black; /* Dark text color for the blog section in light mode */
+        }
+        .light-mode #about,
+        .light-mode #home,
+        .light-mode #education,
+        .light-mode #achievements,
+        .light-mode #skills,
+        .light-mode #blog{
+            background-color: rgb(218, 206, 206); /* Light background color for sections */
+            color: black; 
+            /* Dark text color for sections */
+        }
+        .light-mode #blog1,
+        .light-mode #blog2{
+            border-color: black;
+            background-color:rgb(88, 87, 87);
+        }
+        .light-mode #toggleMode{
+            color: black; /* Blue color for links in light mode */
+        }
+        .light-mode nav a {
+            color: white; /* Set text color to white in light mode */
+}
+        .light-mode .icons a {
+            color: black; /* Set icon color to black in light mode */
+        }
+        body.light-mode .bu{
+            background-color: lightgray;
+        }
+        .icons {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    color: red;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.icons a {
+    margin: 0 10px;
+}
+
+.icons.show {
+    visibility: visible;
+    opacity: 1;
+}
+.likeButton {
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.likeButton::before {
+    content: "\2665";
+    color: #e74c3c; 
+}
+
+.likeCount {
+    margin-left: 5px;
+}
+.comments-section {
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+}
+
+.commentButton {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    padding: 8px 12px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.commentButton:hover {
+    background-color: #27ae60;
+}
+
+   /* existing styles */
+   @media (max-width: 600px) {
+        #about {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .pre {
+            width: 90%; 
+            margin-left: 0; 
+        }
+
+        img {
+            width: 50%; 
+            border-radius: 50%;
+            margin-top: 5%;
+        }
+    }
+#education h2,
+#skills h2,
+#achievements h2 {
+    font-size: 1em;
+    color: white; 
+    font-family: 'Cabin', sans-serif;
+    font-family: 'Exo 2', sans-serif;
+}
+body.light-mode #education h2,
+body.light-mode #skills h2,
+body.light-mode #achievements h2 {
+    color: black; 
+}
+.comments-list {
+    list-style: none; 
+    padding: 0; 
+    margin-top: 10px; 
+}
+
+.comments-list li {
+    display: block; 
+    margin-bottom: 5px; 
+    padding: 5px;
+    border-radius: 5px; 
+}
+
+    </style>
+</head>
+<body >
+    <nav>
+        <ul>
+            <button id="toggleMode" class="button" ></button>
+            <li><a class="top" href="#home"><b>Home</b></a></li>
+            <li><a href="#education"><b>Education</b></a></li>
+            <li><a href="#skills"><b>Skills</b></a></li>
+            <li><a href="#blog"><b>Blog</b></a></li>
+            <li><a href="#achievements"><b>Achievements</b></a></li>
+            <li class="name"><a href="#about"><b>About</b></a></li>
+        </ul>
+    </nav>
+    <section id="home" class="show">
+    <b>Inesh Shukla</b>
+    <!-- This button implements the file functionality -->
+    <button class="bu"><a href="nggup.txt" style="color: black;"><b>©</b></a></button>
+    <br>
+
+    </section>
+    <section id="education">
+        
+                <div style="margin-left: 2%">
+                    <h2 >College:</h2>
+                    <p><strong>International Institute of Information Technology, Hyderabad (IIIT Hyderabad)</strong></p>
+                    <p style="font-family: 'Cabin', sans-serif;
+                    font-family: 'Exo 2', sans-serif;">Currently pursuing a Dual-Degree program at IIIT Hyderabad(Btech in Computer Science and Masters in Computational Natural Sciences).</p>
+                </div>
+                <div style="margin-left: 2%">
+                    <h2 >Schooling:</h2>
+                    <p style="font-family: 'Cabin', sans-serif;
+                    font-family: 'Exo 2', sans-serif;"><strong>Delhi Public School, Lucknow</strong></p>
+                    <p>Attended Delhi Public School, Lucknow.</p>
+                </div>
+                
+    </section>
+    <section id="skills">
+    <div class="skill">
+        <h2>C Programming:</h2> Proficient in C programming language, data structures, and algorithms.
+    </div>
+    <div class="skill">
+        <h2>Web Development:</h2> Experience in building responsive and dynamic web applications using HTML, CSS, and JavaScript. Familiar with front-end frameworks like React and back-end technologies like Node.js.
+    </div>
+    <div class="skill">
+        <h2>Art:</h2> Passionate about artistic expression, with skills in drawing and visual arts. Experience in creating digital art using graphic design tools.
+    </div>
+    </section>
+
+    <section id="blog">
+        <div class="blog-content" id="blog1">
+            <h2><a href="blog2.html" target="_blank" id="t1">Mewing: A journey</a></h2>
+            <button class="likeButton" data-blog-id="blog1"></button>
+            <span class="likeCount" id="likeCount_blog1">0</span>
+            <div class="comments-section">
+                <textarea id="comments_blog1" placeholder="Leave a comment"></textarea>
+                <button class="commentButton" data-blog-id="blog1">Post Comment</button>
+                <ol class="comments-list" id="commentsList_blog1">
+                </ol>
+            </div>
+        </div>
+        
+        <div class="blog-content" id="blog2">
+            <h2><a href="blog1.html" target="_blank" id="t2">Jeffrey Dahmer</a></h2>
+            <button class="likeButton" data-blog-id="blog2"></button>
+            <span class="likeCount" id="likeCount_blog2">0</span>
+            <div class="comments-section">
+                <textarea id="comments_blog2" placeholder="Leave a comment"></textarea>
+                <button class="commentButton" data-blog-id="blog2">Post Comment</button>
+                <ol class="comments-list" id="commentsList_blog2">
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section id="achievements">
+            <div class="skill">
+                 ->Survived school.
+            </div>
+            <br>
+            <div class="skill">
+                 ->Surviving college
+            </div>
+            <br>
+            <div class="skill">
+                 ->Still Alive.
+            </div>
+    </section>
+
+    <section id="about">
+    <div class="pre">         I am Inesh Shukla,originally from lucknow (newabs and kebabs). 
+         As for my likes I am into jazz music and drawing for the artsy sides 
+         of things and rock music, smashing things for the more non-artsy side. 
+
+        If I could I would take a walkman, burn all my possesions and live 
+        in a van travelling around the world ,but then again I can't.
+        I ended up joining IIIT Hyderabad in a Dual-Degree program somehow.
+    </div> 
+    <img src="profile.jpg" style="height:35%;">
+    </section>
+    <div class="icons">
+        <a href="https://github.com/ineshshukla" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/ineshshukla/?next=%2F" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/inesh-shukla-493798268/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://open.spotify.com/user/r7focnwf892vka8647mlt2z8m?si=99ab9e4370f64d4a" target="_blank"><i class="fab fa-spotify"></i></a>
+        <a href="mailto:your_example_email@gmail.com?"><i class="fas fa-envelope"></i></a>
+        </div>
+    <script>
+        document.querySelectorAll('li a').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                var targetId = this.getAttribute('href').substring(1); 
+                var targetSection = document.getElementById(targetId);
+                targetSection.classList.toggle('show');
+
+                document.querySelectorAll('section').forEach(function (section) {
+                    if (section.id !== targetId && section.classList.contains('show')) {
+                        section.classList.remove('show');
+                    }
+                });
+
+
+            });
+        });
+        document.getElementById('toggleMode').addEventListener('click', function () {
+            document.body.classList.toggle('light-mode');
+            document.body.className.toggle('light-mode')
+
+            document.querySelectorAll('section').forEach(function (section) {
+                section.classList.toggle('light-mode');
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+    document.body.classList.add('light-mode');
+
+    document.querySelectorAll('section').forEach(function (section) {
+        section.classList.add('light-mode');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    document.querySelectorAll('.likeButton').forEach(function (button) {
+        button.addEventListener('click', function () {
+            var blogId = this.getAttribute('data-blog-id');
+            var likeCount = document.getElementById('likeCount_' + blogId);
+            var currentLikes = parseInt(likeCount.textContent);
+            likeCount.textContent = currentLikes + 1; 
+        });
+    });
+
+    document.querySelectorAll('.commentButton').forEach(function (button) {
+        button.addEventListener('click', function () {
+            var blogId = this.getAttribute('data-blog-id');
+            var commentsList = document.getElementById('commentsList_' + blogId);
+            var commentTextarea = document.getElementById('comments_' + blogId);
+            var commentText = commentTextarea.value.trim();
+            if (commentText !== '') {
+                var newComment = document.createElement('li');
+                newComment.textContent = commentText;
+                commentsList.appendChild(newComment);
+                commentTextarea.value = ''; 
+            }
+        });
+    });
+});
+
+
+    </script>
+</body>
+</html>
